@@ -1,0 +1,186 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+
+\makeatletter
+\newcommand{\BvrSetLabInstructor}[1]{\gdef\Bvr@LabInstructor{#1}}
+\newcommand{\Bvr@LabInstructor}{Nisha Thakur}
+\newcommand{\BvrLabInstructorValue}{\Bvr@LabInstructor}
+\makeatother
+\pretitle{\begin{center}\bfseries\fontsize{18bp}{18bp}\selectfont}
+\makeatletter
+\newcommand{\BvrSubtitle}[1]{\posttitle{\par\end{center}\begin{center}\large#1\end{center}\vskip 0.5em}}
+\makeatother
+\newcommand{\BvrHint}[1]{{\normalfont\normalsize\itshape\hfill #1}}
+
+\title{Enterprise Portfolio Management System}
+\BvrSetLabInstructor{Nisha Thakur}
+\BvrSubtitle{Project Proposal for UCS503P\\Submitted to: \BvrLabInstructorValue \\ \bfseries Thapar Institute of Engineering and Technology}
+
+\author{
+Simar Arora, CSED	hanks{Roll No: 	exttt{1024030797}} \
+Bhanu Pratap, CSED	hanks{Roll No: 	exttt{1024030787}} \
+Namit, CSED	hanks{Roll No: 	exttt{1024030803}} \
+\thanks{Roll No: \texttt{FRIEND\_ROLL\_NO}, Email: \texttt{FRIEND\_EMAIL}}
+}
+\date{August 18, 2026}
+
+\begin{document}
+\maketitle
+
+\section{Higher-order goal \BvrHint{\ldots secondary framing}}
+This project aims to improve the efficiency, transparency, and organization of portfolio management by providing a centralized platform for portfolio managers and clients. While the broader domain is investment and wealth management, the immediate engineering objective is to build a measurable, deployable software system that provides a consistent view of client portfolios, transactions, performance, and risk.
+
+\section{Time-to-value \BvrHint{\ldots primary heuristic}}
+\begin{itemize}[leftmargin=0.7cm]
+\item We will deliver the core portfolio workflow early by implementing authentication, client-manager assignment, portfolio creation, holdings, transactions, and basic valuation.
+\item Development will follow short iterations, with each iteration producing a functional increment that can be tested independently.
+\item CI-backed automated builds and tests will be introduced early to reduce integration and release friction.
+\item Later iterations will add market data, performance analytics, risk metrics, investment-request workflows, reporting, and AI-assisted explanations.
+\item Success will be measured by the correctness and responsiveness of the core portfolio workflow and improved through subsequent iterations.
+\end{itemize}
+
+\section{Problem Statement}
+Portfolio managers handling multiple clients need to continuously monitor holdings, transactions, portfolio value, market prices, performance, allocation, and risk. Fragmented or manually managed workflows can create several problems:
+\begin{itemize}[leftmargin=0.7cm]
+\item \textbf{Fragmentation:} client information, holdings, transactions, market information, and reports may be maintained across separate tools.
+\item \textbf{Limited visibility:} managers may not have a single, consistent view of the current state of each client's portfolio.
+\item \textbf{Manual calculations:} portfolio value, profit/loss, allocation, and performance can require repeated calculations.
+\item \textbf{Delayed information:} outdated prices can result in an inaccurate view of current portfolio value.
+\item \textbf{Inefficient workflow:} investment requests and manager decisions may require communication outside the portfolio-management system.
+\item \textbf{Limited risk visibility:} concentration, volatility, drawdown, and other indicators may not be available in one dashboard.
+\item \textbf{Reporting and audit overhead:} generating reports and tracing portfolio changes can require manual effort.
+\end{itemize}
+
+\section{Proposed Solution \BvrHint{\ldots Software Proposition}}
+\subsection{Overview}
+Build a web-based \textbf{Enterprise Portfolio Management System (EPMS)} with separate interfaces for portfolio managers and clients. The system will provide:
+\begin{itemize}[leftmargin=0.7cm]
+\item \textbf{Client portal:} view portfolio holdings, value, performance, transactions, reports, and submit investment requests.
+\item \textbf{Manager portal:} monitor assigned clients, review portfolios, analyze performance and risk, and approve or reject investment requests.
+\item \textbf{Portfolio engine:} maintain holdings, transactions, cash balances, portfolio value, cost basis, and profit/loss.
+\item \textbf{Market-data layer:} obtain current market prices through a supported provider or simulated data during development.
+\item \textbf{Analytics and reporting:} calculate portfolio performance, allocation, selected risk metrics, and generate reports.
+\item \textbf{Audit and notifications:} record important portfolio actions and notify users of relevant workflow events.
+\end{itemize}
+
+\subsection{Core workflow}
+\begin{enumerate}[leftmargin=0.7cm]
+\item Client logs in and views the current portfolio.
+\item System displays holdings, portfolio value, P\&L, allocation, and performance.
+\item Client submits an investment request for a selected asset and amount.
+\item Manager reviews the request together with portfolio and risk information.
+\item Manager approves or rejects the request.
+\item An approved request creates a simulated transaction and updates the portfolio.
+\item Client receives a notification and can view the updated portfolio.
+\end{enumerate}
+
+\subsection{Operational constraints for an educational portfolio-management setting}
+\begin{itemize}[leftmargin=0.7cm]
+\item The platform will not execute real-money trades; transactions will be simulated.
+\item Market-data availability will depend on the selected provider, with mock data available for testing.
+\item Authoritative financial calculations will be performed by the backend rather than the AI model.
+\item AI will be used for explanations of verified application data, not autonomous trading decisions.
+\item The implementation will prioritize workflow correctness, security, deployability, and measurable performance over research-level financial algorithms.
+\end{itemize}
+
+\section{Solution Approach \BvrHint{\ldots Engineering focus}}
+This is an engineering course project, so the focus is on reliable portfolio-management workflows, correctness, security, scalability, and measurable delivery rather than novel financial-algorithm research.
+
+\subsection{Portfolio calculation and analytics \BvrHint{\ldots non-research}}
+The backend will maintain clients, portfolios, assets, holdings, transactions, and cash balances. It will calculate portfolio value, cost basis, realized and unrealized P\&L, return, and asset allocation. Later iterations will add volatility, Sharpe ratio, beta, maximum drawdown, concentration analysis, and benchmark comparison.
+
+\subsection{Web architecture \BvrHint{\ldots web-based solution}}
+A layered web architecture will be used:
+\begin{itemize}[leftmargin=0.7cm]
+\item \textbf{Frontend:} role-specific interfaces for clients and portfolio managers.
+\item \textbf{Backend API:} authentication, authorization, portfolio management, transactions, requests, calculations, analytics, and notifications.
+\item \textbf{Database:} persistent storage for users, portfolios, holdings, transactions, and audit information.
+\item \textbf{Supporting services:} market-data access, caching where appropriate, and AI-assisted explanations.
+\end{itemize}
+
+\subsection{CI/CD and fast delivery enabler}
+CI/CD will be used to automatically build the application, run unit and integration tests, validate pull requests, and produce repeatable deployment artifacts. Development will use Git branches and pull requests rather than direct changes to the stable main branch.
+
+\section{Evaluation Criterion \BvrHint{\ldots measurable and attributable}}
+We define success using measurable metrics tied to the core portfolio workflow.
+
+\subsection{Primary evaluation metric}
+\textbf{Portfolio valuation correctness:} for predefined portfolios containing known holdings, transactions, and prices, calculated portfolio value and P\&L should match independently calculated expected values within a predefined tolerance. Results will be attributable to stored transactions, quantities, cost basis, and market prices.
+
+\subsection{Secondary evaluation metrics}
+\begin{itemize}[leftmargin=0.7cm]
+\item \textbf{API response time:} response time for common operations such as login and portfolio retrieval.
+\item \textbf{Market-data latency:} time between receiving a price update and displaying the corresponding value.
+\item \textbf{Workflow correctness:} investment requests follow the expected PENDING $\rightarrow$ APPROVED/REJECTED transitions and approved requests update simulated records.
+\item \textbf{Access-control correctness:} clients can access only their own portfolios and managers only their assigned portfolios.
+\item \textbf{Reliability:} successful execution of the core workflow during the pilot/staging period.
+\end{itemize}
+
+\subsection{Pilot validation plan \BvrHint{\ldots high-level}}
+\begin{itemize}[leftmargin=0.7cm]
+\item Use 2--3 simulated portfolio managers and 5--10 simulated clients.
+\item Create multiple portfolios, assets, transactions, and predefined market-price scenarios.
+\item Test login, portfolio viewing, investment requests, approval/rejection, portfolio updates, P\&L recalculation, and access-control rules.
+\end{itemize}
+
+\section{Scalability \BvrHint{\ldots with foresight}}
+The system should scale in both theoretical and practical senses.
+\begin{enumerate}[leftmargin=0.7cm]
+\item \textbf{Scalable (theoretically):} support growth in clients, portfolios, transactions, and concurrent dashboard usage through separation of frontend/backend, stateless APIs where appropriate, database indexing, pagination, and caching.
+\item \textbf{Operationally deployable (practically):} containerize the application using Docker and use CI/CD for repeatable builds and deployments on commonly available hosting infrastructure.
+\end{enumerate}
+
+\section{Engine availability heuristic}
+A mature set of tools and services is available to implement the project as a web-based system:
+\begin{itemize}[leftmargin=0.7cm]
+\item Web framework: React + TypeScript for the frontend and Java + Spring Boot for backend APIs.
+\item Relational database: PostgreSQL with Hibernate / Spring Data JPA.
+\item Authentication: Spring Security + JWT.
+\item Cache: Redis where appropriate.
+\item Market data: a supported provider such as DhanHQ, subject to access requirements.
+\item AI: Ollama with a locally hosted language model for explanations.
+\item Testing: JUnit and integration testing.
+\item CI/CD and deployment: GitHub Actions and Docker.
+\end{itemize}
+We will use these mature components to focus on workflow design, correctness, security, measurement, and deployability rather than inventing new infrastructure.
+
+\section{Project scope and deliverables \BvrHint{\ldots iteration-friendly}}
+\subsection{Initial deliverable \BvrHint{\ldots first iteration}}
+\begin{itemize}[leftmargin=0.7cm]
+\item Role-based authentication and client/manager profiles.
+\item Client-manager assignment and portfolio creation.
+\item Asset, holding, and transaction management.
+\item Basic portfolio valuation and P\&L calculation.
+\item Initial manager dashboard and client portfolio view.
+\item Backend unit tests and CI build/test pipeline.
+\end{itemize}
+
+\subsection{Subsequent deliverables}
+\begin{itemize}[leftmargin=0.7cm]
+\item Market-data integration, current-price valuation, performance charts, and allocation.
+\item Investment requests, manager approval/rejection, simulated transactions, notifications, and audit logging.
+\item Risk metrics including volatility, Sharpe ratio, beta, maximum drawdown, and concentration analysis, together with portfolio reports.
+\item AI-assisted portfolio explanations, Dockerized deployment, performance/security testing, and CI/CD deployment.
+\end{itemize}
+
+\section{Risks and mitigations}
+\begin{itemize}[leftmargin=0.7cm]
+\item \textbf{Market-data dependency:} use an abstraction layer and mock market data for development and testing.
+\item \textbf{Financial calculation errors:} use deterministic backend calculations and validate them with predefined test cases and independent expected values.
+\item \textbf{AI hallucination:} keep financial calculations in the backend and use AI only for explanations based on verified data.
+\item \textbf{Unauthorized access:} implement role-based authorization, ownership checks, protected APIs, and security tests.
+\item \textbf{Team integration conflicts:} use feature branches, pull requests, code review, automated tests, and a protected main branch.
+\item \textbf{Evaluation ambiguity:} define measurable metrics and reproducible test scenarios before development begins.
+\end{itemize}
+
+\section{Summary}
+This project proposes a deployable web platform that centralizes portfolio management, market monitoring, performance analysis, risk analysis, client-manager workflows, reporting, and AI-assisted explanations. It follows the course's engineering focus by delivering a functional core workflow early, using CI/CD for reliable iteration, and evaluating the system through measurable correctness, responsiveness, security, and reliability criteria. The platform will provide two primary user experiences: a portfolio manager portal for managing clients and portfolios and a client portal for monitoring investments and interacting with the portfolio-management workflow.
+
+\end{document}
