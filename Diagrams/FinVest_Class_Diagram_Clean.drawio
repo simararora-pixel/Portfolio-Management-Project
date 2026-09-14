@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="PortfoMax Class Diagram">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="PortfoMax — Class Diagram" vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;">
+          <mxGeometry x="430" y="20" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user" value="User&#10;----------------&#10;userId&#10;username&#10;password&#10;role&#10;----------------&#10;login()&#10;logout()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="50" y="130" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="client" value="Client&#10;----------------&#10;clientId&#10;name&#10;email&#10;phone&#10;----------------&#10;viewPortfolio()&#10;submitRequest()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="50" y="360" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="manager" value="PortfolioManager&#10;----------------&#10;managerId&#10;----------------&#10;createPortfolio()&#10;addAsset()&#10;buyAsset()&#10;sellAsset()&#10;generateReport()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="50" y="590" width="200" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="portfolio" value="Portfolio&#10;----------------&#10;portfolioId&#10;portfolioName&#10;totalValue&#10;cashBalance&#10;riskLevel&#10;----------------&#10;calculateValue()&#10;calculatePerformance()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="360" y="170" width="240" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="request" value="InvestmentRequest&#10;----------------&#10;requestId&#10;requestType&#10;message&#10;status&#10;requestDate&#10;----------------&#10;submitRequest()&#10;updateStatus()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="360" y="445" width="240" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="report" value="Report&#10;----------------&#10;reportId&#10;reportType&#10;generatedDate&#10;filePath&#10;----------------&#10;generateReport()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="360" y="680" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="asset" value="Asset&#10;----------------&#10;assetId&#10;symbol&#10;assetName&#10;assetType&#10;currentPrice&#10;----------------&#10;updatePrice()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="740" y="90" width="210" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="holding" value="Holding&#10;----------------&#10;holdingId&#10;quantity&#10;averagePrice&#10;currentValue&#10;----------------&#10;calculateProfitLoss()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="740" y="320" width="210" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="transaction" value="Transaction&#10;----------------&#10;transactionId&#10;transactionType&#10;quantity&#10;price&#10;totalAmount&#10;transactionDate&#10;----------------&#10;executeTransaction()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="1030" y="300" width="210" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="performance" value="Performance&#10;----------------&#10;performanceId&#10;returnPercentage&#10;profitLoss&#10;calculationDate&#10;----------------&#10;calculateReturn()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="740" y="560" width="210" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="risk" value="RiskMetric&#10;----------------&#10;riskId&#10;volatility&#10;beta&#10;riskScore&#10;----------------&#10;calculateRisk()" vertex="1" parent="1" style="swimlane;fontStyle=1;align=left;horizontal=0;startSize=28;whiteSpace=wrap;html=1;fillColor=white;strokeColor=black;fontSize=11;">
+          <mxGeometry x="1030" y="560" width="210" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="is-a" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="client" target="user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" value="is-a" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="manager" target="user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" value="owns" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="client" target="portfolio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" value="manages" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="manager" target="portfolio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" value="submits" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="client" target="request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" value="handles" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="manager" target="request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" value="generates" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="portfolio" target="report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r8" value="contains" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="portfolio" target="holding">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r9" value="uses" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="asset" target="holding">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r10" value="records" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="portfolio" target="transaction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r11" value="involves" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="asset" target="transaction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r12" value="has" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="portfolio" target="performance">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r13" value="has" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" source="portfolio" target="risk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

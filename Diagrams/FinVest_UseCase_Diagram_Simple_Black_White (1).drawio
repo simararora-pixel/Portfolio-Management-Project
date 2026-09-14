@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net" modified="2026-09-14T00:00:00.000Z" agent="Mozilla/5.0" version="24.7.17">
+  <diagram id="portfomax-usecase" name="PortfoMax Use Case Diagram">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="boundary" value="PortfoMax Portfolio Management System" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=none;strokeColor=#000000;fontStyle=1;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="60" width="1050" height="720" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="manager" value="Portfolio Manager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="70" y="330" width="120" height="160" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="client" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="330" width="100" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="api" value="Market Data Provider API" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="650" width="170" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc_login" value="Login" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="60" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_dashboard" value="View Dashboard" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="145" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_clients" value="Manage Clients" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="230" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_create" value="Create Portfolio" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="315" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_assets" value="Manage Assets" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="400" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_buy" value="Buy / Sell Assets" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="485" width="170" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_holdings" value="View Holdings" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="40" y="570" width="170" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc_analytics" value="Portfolio Analytics" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="310" y="145" width="190" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_charts" value="View Charts" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="310" y="230" width="190" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_risk" value="Risk Analysis" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="310" y="315" width="190" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_rebalance" value="Rebalancing" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="310" y="400" width="190" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_reports" value="Generate Reports" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="310" y="485" width="190" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_requests" value="Manage Client Requests" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="310" y="570" width="190" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc_myportfolio" value="View Own Portfolio" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="720" y="145" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_top" value="View Top Performing Portfolio" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="700" y="245" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_live" value="View Live Market" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="720" y="345" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_request" value="Submit Request to Manager" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="700" y="445" width="240" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_fetch" value="Fetch Live Market Data" style="ellipse;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" vertex="1" parent="boundary">
+          <mxGeometry x="720" y="570" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="manager" target="uc_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeColor=#000000;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="manager" target="uc_dashboard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="manager" target="uc_clients" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="manager" target="uc_create" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="manager" target="uc_assets" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="manager" target="uc_buy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="manager" target="uc_holdings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="manager" target="uc_analytics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="manager" target="uc_charts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="manager" target="uc_risk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="manager" target="uc_rebalance" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="manager" target="uc_reports" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="manager" target="uc_requests" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e14" edge="1" parent="1" source="client" target="uc_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="client" target="uc_myportfolio" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="client" target="uc_top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="client" target="uc_live" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="client" target="uc_request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="api" target="uc_fetch" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="include" value="&lt;&lt;include&gt;&gt;" style="dashed=1;endArrow=open;html=1;strokeColor=#000000;" edge="1" parent="1" source="uc_live" target="uc_fetch">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

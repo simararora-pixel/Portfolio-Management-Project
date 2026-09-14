@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2026-09-14T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="epms-sequence-01" name="EPMS Sequence Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="Portfolio Management System (EPMS) — Buy Asset Sequence" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="20" width="740" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="actor" value="Portfolio Manager" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="95" width="80" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="frontend" value="React Frontend" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="90" width="130" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="controller" value="Spring Boot Controller" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="90" width="150" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="service" value="Service Layer" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="90" width="130" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo" value="Repository" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="940" y="90" width="120" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="PostgreSQL Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="90" width="150" height="760" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m1" value="1. Select portfolio and asset; enter quantity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="actor" target="frontend">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="190" y="230"/><mxPoint x="315" y="230"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2. Submit BUY request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="frontend" target="controller">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="430" y="300"/><mxPoint x="555" y="300"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3. Validate request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="controller" target="service">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="675" y="370"/><mxPoint x="785" y="370"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4. Check balance and holdings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="service" target="repo">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="895" y="440"/><mxPoint x="1000" y="440"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5. Read portfolio, asset and holding data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="repo" target="db">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1100" y="510"/><mxPoint x="1225" y="510"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6. Return validation data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="db" target="repo">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1225" y="570"/><mxPoint x="1000" y="570"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7. Save transaction and update holding" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="service" target="repo">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="785" y="640"/><mxPoint x="1000" y="640"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="8. INSERT transaction; UPDATE holding" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="repo" target="db">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1000" y="700"/><mxPoint x="1225" y="700"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="9. Success response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;" edge="1" parent="1" source="controller" target="frontend">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="555" y="770"/><mxPoint x="315" y="770"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="10. Display updated holdings and confirmation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="frontend" target="actor">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="315" y="820"/><mxPoint x="190" y="820"/></Array></mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

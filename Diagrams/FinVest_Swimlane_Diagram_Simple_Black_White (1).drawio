@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" modified="2026-09-14T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="portfomax-swimlane" name="PortfoMax Swimlane Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="PortfoMax – Swimlane Diagram&#xa;Client Request for Portfolio Manager" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="260" y="20" width="650" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="laneClient" value="Client" style="swimlane;horizontal=0;startSize=35;fillColor=none;strokeColor=#000000;fontStyle=1;fontSize=16;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="250" height="650" as="geometry"/>
+        </mxCell>
+        <mxCell id="laneSystem" value="System" style="swimlane;horizontal=0;startSize=35;fillColor=none;strokeColor=#000000;fontStyle=1;fontSize=16;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="290" y="100" width="300" height="650" as="geometry"/>
+        </mxCell>
+        <mxCell id="laneManager" value="Portfolio Manager" style="swimlane;horizontal=0;startSize=35;fillColor=none;strokeColor=#000000;fontStyle=1;fontSize=16;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="590" y="100" width="300" height="650" as="geometry"/>
+        </mxCell>
+        <mxCell id="laneDB" value="Database" style="swimlane;horizontal=0;startSize=35;fillColor=none;strokeColor=#000000;fontStyle=1;fontSize=16;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="890" y="100" width="250" height="650" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="laneClient"><mxGeometry x="110" y="55" width="25" height="25" as="geometry"/></mxCell>
+        <mxCell id="login" value="Login to PortfoMax" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneClient"><mxGeometry x="55" y="100" width="140" height="45" as="geometry"/></mxCell>
+        <mxCell id="select" value="Select Request Portfolio Manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneClient"><mxGeometry x="45" y="180" width="160" height="55" as="geometry"/></mxCell>
+        <mxCell id="details" value="Enter Request Details" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneClient"><mxGeometry x="55" y="270" width="140" height="45" as="geometry"/></mxCell>
+        <mxCell id="submit" value="Submit Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneClient"><mxGeometry x="55" y="350" width="140" height="45" as="geometry"/></mxCell>
+        <mxCell id="viewResponse" value="View Notification and Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneClient"><mxGeometry x="35" y="545" width="180" height="55" as="geometry"/></mxCell>
+        <mxCell id="end" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="laneClient"><mxGeometry x="110" y="625" width="25" height="25" as="geometry"/></mxCell>
+
+        <mxCell id="validate" value="Validate Request Details" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneSystem"><mxGeometry x="70" y="350" width="160" height="45" as="geometry"/></mxCell>
+        <mxCell id="save" value="Save Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneSystem"><mxGeometry x="70" y="430" width="160" height="45" as="geometry"/></mxCell>
+        <mxCell id="notifyManager" value="Notify Portfolio Manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneSystem"><mxGeometry x="70" y="510" width="160" height="45" as="geometry"/></mxCell>
+        <mxCell id="notifyClient" value="Notify Client with Response" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneSystem"><mxGeometry x="70" y="590" width="160" height="45" as="geometry"/></mxCell>
+
+        <mxCell id="viewRequests" value="View Client Requests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneManager"><mxGeometry x="70" y="510" width="160" height="45" as="geometry"/></mxCell>
+        <mxCell id="review" value="Review Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneManager"><mxGeometry x="70" y="570" width="160" height="45" as="geometry"/></mxCell>
+        <mxCell id="decision" value="Accept Request?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneManager"><mxGeometry x="85" y="635" width="130" height="75" as="geometry"/></mxCell>
+
+        <mxCell id="store" value="Store Request in Database" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneDB"><mxGeometry x="45" y="430" width="160" height="65" as="geometry"/></mxCell>
+        <mxCell id="update" value="Update Request Status" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="laneDB"><mxGeometry x="45" y="635" width="160" height="65" as="geometry"/></mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="start" target="login"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="login" target="select"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="select" target="details"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="details" target="submit"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="submit" target="validate"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="validate" target="save"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="save" target="store"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="save" target="notifyManager"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="notifyManager" target="viewRequests"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="viewRequests" target="review"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="review" target="decision"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" value="Yes / No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="decision" target="update"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="update" target="notifyClient"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="notifyClient" target="viewResponse"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;" edge="1" parent="1" source="viewResponse" target="end"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
